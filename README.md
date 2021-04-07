@@ -1,3 +1,1 @@
 # Filter-sass
-
-Hello world! 
