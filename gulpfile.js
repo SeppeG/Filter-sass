@@ -2,9 +2,9 @@ const { src, dest, series, parallel, watch } = require("gulp");
 const del = require("del");
 const browserSync = require("browser-sync");
 const sass = require("gulp-dart-sass");
-
 const babel = require("gulp-babel");
 const concatenate = require("gulp-concat");
+const webp = require("gulp-webp");
 
 const origin = "src";
 const destination = "build";
@@ -19,6 +19,12 @@ async function clean(cb) {
 function html(cb) {
   src(`${origin}/**/*.html`).pipe(dest(destination));
   cb();
+}
+
+async function images(cb) {
+  src(`${origin}/img/**/**`)
+    .pipe(webp())
+    .pipe(dest(`${destination}/img`));
 }
 
 function scss(cb) {
@@ -59,4 +65,4 @@ function server(cb) {
 exports.html = html;
 exports.scss = scss;
 exports.js = js;
-exports.default = series(clean, parallel(html, scss, js), server, watcher);
+exports.default = series(clean, parallel(html, scss, js), images, server, watcher);

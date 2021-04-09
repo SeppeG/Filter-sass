@@ -1,0 +1,31 @@
+// Custom.scss
+
+// Include any default variable overrides here (though functions won't be available)
+$navbar-brand-margin-end: 4rem;
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// Then add additional custom code here
+.bg-img {
+  /* The image used */
+  background-image: url(../../img/coffee_bg.webp);
+
+  height: 100vh;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  /* Needed to position the navbar */
+  position: relative;
+}
+
+.overlay-dark {
+  background-color: rgba($black, 0.4);
+}
+
+@media only screen and (max-width: 800px) {
+  .navbar-collapse {
+    background: #eeefef;
+  }
+}
