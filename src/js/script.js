@@ -1,4 +1,5 @@
 import "bootstrap";
+import "jquery";
 
 $(function () {
 	$(document).scroll(function () {

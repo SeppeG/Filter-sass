@@ -2,6 +2,8 @@
 
 require("bootstrap");
 
+require("jquery");
+
 $(function () {
   $(document).scroll(function () {
     var $nav = $(".navbar");
