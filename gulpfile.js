@@ -22,9 +22,11 @@ function html(cb) {
 }
 
 async function images(cb) {
-  src(`${origin}/img/**/**`)
+  src(`${origin}/img/*`)
     .pipe(webp())
     .pipe(dest(`${destination}/img`));
+  src(`${origin}/img/favicon/*`).pipe(dest(`${destination}/img/favicon`));
+  cb();
 }
 
 function scss(cb) {

@@ -1,31 +1,52 @@
 // Custom.scss
 
 // Include any default variable overrides here (though functions won't be available)
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Montserrat&display=swap");
+
 $navbar-brand-margin-end: 4rem;
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
 // Then add additional custom code here
+@import "../../node_modules/animate.css/animate";
+body {
+	position: relative;
+	font-family: "Montserrat", sans-serif;
+}
+.navbar {
+	background-color: transparent;
+}
+.navbar.scrolled {
+	background-color: rgba(255, 255, 255, 0.5) !important;
+	transition: background-color 200ms linear;
+}
+
+.h1,
+.h2,
+h3,
+.h4 {
+	font-family: "Josefin Sans", sans-serif;
+}
 .bg-img {
-  /* The image used */
-  background-image: url(../../img/coffee_bg.webp);
+	/* The image used */
+	background-image: url(../../img/coffee_bg.webp);
 
-  height: 100vh;
+	height: 100vh;
 
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+	/* Center and scale the image nicely */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 
-  /* Needed to position the navbar */
-  position: relative;
+	/* Needed to position the navbar */
+	position: relative;
 }
 
 .overlay-dark {
-  background-color: rgba($black, 0.4);
+	background-color: rgba($black, 0.4);
 }
 
 @media only screen and (max-width: 800px) {
-  .navbar-collapse {
-    background: #eeefef;
-  }
+	.navbar-collapse {
+		background: #eeefef;
+	}
 }
