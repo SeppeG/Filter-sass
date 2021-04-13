@@ -14,10 +14,17 @@ body {
 }
 .navbar {
 	background-color: transparent;
+	transition: background-color 200ms linear;
 }
 .navbar.scrolled {
-	background-color: rgba(255, 255, 255, 0.5) !important;
+	background: rgba(255, 255, 255, 0.8) !important;
 	transition: background-color 200ms linear;
+	.dropdown .dropdown-menu {
+		border-color: transparent;
+		background: white;
+	.container .dropdown .dropdown-menu a:hover {
+		background: rgba(0, 0, 0, 0.5);
+	}
 }
 
 .h1,
@@ -47,6 +54,20 @@ h3,
 
 @media only screen and (max-width: 800px) {
 	.navbar-collapse {
-		background: #eeefef;
+		text-align: center;
+		background: rgba(255, 255, 255, 0.5);
 	}
+	.dropdown .dropdown-menu {
+		background: rgba(255, 255, 255, 0.5);
+		text-align: center;
+		border-color: white;
+	}
+}
+
+.dropdown .dropdown-menu {
+	border-color: black;
+	background: transparent;
+}
+.container .dropdown .dropdown-menu a:hover {
+	background: rgba(255, 255, 255, 0.1);
 }
