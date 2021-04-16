@@ -16,6 +16,8 @@ $filter-pink: #f3d8d5;
 $filter-yellow: #e8f2bd;
 $filter-blue: #bdd4f2;
 $filter-gray: #8a96a6;
+$open-green: #0bcc0f;
+$closed-red: #ff1800;
 
 // General
 @import "../../node_modules/animate.css/animate";
@@ -33,6 +35,7 @@ body {
 }
 h1 {
 	font-family: "Josefin Sans", sans-serif;
+	padding-top: 5rem;
 	text-transform: uppercase;
 }
 h1:after {
@@ -74,6 +77,9 @@ h3:after {
 h4 {
 	font-size: 20px;
 	text-transform: capitalize;
+}
+.container {
+	overflow: hidden;
 }
 
 .bg-img {
@@ -230,6 +236,22 @@ h4 {
 }
 #description {
 	text-transform: capitalize;
+}
+
+// Opening Hours
+.fa-door-open {
+	color: $open-green;
+}
+#sunday {
+	color: orange;
+}
+
+.fa-door-closed {
+	color: $closed-red;
+}
+#opening-list {
+	list-style-type: none;
+	font-size: 20px;
 }
 
 // Footer
