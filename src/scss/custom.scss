@@ -2,37 +2,80 @@
 
 // Include any default variable overrides here (though functions won't be available)
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Montserrat&display=swap");
+@import "fontawesome/fontawesome.scss";
+@import "fontawesome/solid.scss";
+@import "fontawesome/brands.scss";
 
 $navbar-brand-margin-end: 4rem;
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
 // Then add additional custom code here
+
+// Colors
+$filter-pink: #f3d8d5;
+$filter-yellow: #e8f2bd;
+$filter-blue: #bdd4f2;
+$filter-gray: #8a96a6;
+
+// General
 @import "../../node_modules/animate.css/animate";
+.user {
+	@extend %fa-icon;
+	@extend .fas;
+
+	&:before {
+		content: fa-content($fa-var-user);
+	}
+}
 body {
 	position: relative;
 	font-family: "Montserrat", sans-serif;
 }
-.navbar {
-	background-color: transparent;
-	transition: background-color 200ms linear;
+h1 {
+	font-family: "Josefin Sans", sans-serif;
+	text-transform: uppercase;
 }
-.navbar.scrolled {
-	background: rgba(255, 255, 255, 0.8) !important;
-	transition: background-color 200ms linear;
-	.dropdown .dropdown-menu {
-		border-color: transparent;
-		background: white;
-	.container .dropdown .dropdown-menu a:hover {
-		background: rgba(0, 0, 0, 0.5);
-	}
+h1:after {
+	content: " ";
+	width: 2rem;
+	margin: auto;
+	display: block;
+	border: 2px solid $filter-pink;
+	border-radius: 4px;
+	margin-bottom: 2rem;
 }
 
-.h1,
-.h2,
-h3,
-.h4 {
-	font-family: "Josefin Sans", sans-serif;
+h3 {
+	display: inline-block;
+	font-size: 32px;
+	line-height: 36px;
+	position: relative;
+	margin-top: 28px;
+	margin-bottom: 15px;
 }
+h3:before {
+	left: -40px;
+	height: 0;
+	height: 1px;
+}
+h3:before,
+h3:after {
+	content: "";
+	position: absolute;
+	bottom: 18px;
+	height: 1px;
+	width: 40px;
+	margin: 0 -15px;
+	background-color: #533834;
+}
+h3:after {
+	right: -40px;
+}
+h4 {
+	font-size: 20px;
+	text-transform: capitalize;
+}
+
 .bg-img {
 	/* The image used */
 	background-image: url(../../img/coffee_bg.webp);
@@ -48,19 +91,28 @@ h3,
 	position: relative;
 }
 
-.overlay-dark {
-	background-color: rgba($black, 0.4);
+// Navigation
+.navbar {
+	margin: auto;
+	background-color: transparent;
+	padding: 1rem 20rem;
+	transition: 0.4s;
+	top: 0; /* At the top */
+	z-index: 99;
 }
-
-@media only screen and (max-width: 800px) {
-	.navbar-collapse {
-		text-align: center;
-		background: rgba(255, 255, 255, 0.5);
-	}
+.navbar.scrolled {
+	background: rgba(255, 255, 255, 0.9) !important;
+	transition: background-color 200ms linear;
 	.dropdown .dropdown-menu {
-		background: rgba(255, 255, 255, 0.5);
-		text-align: center;
-		border-color: white;
+		border-color: transparent;
+		background: white;
+	}
+	.container .dropdown .dropdown-menu a:hover {
+		background: rgba(0, 0, 0, 0.5);
+	}
+
+	#navbar-logo {
+		width: 150 !important;
 	}
 }
 
@@ -68,6 +120,133 @@ h3,
 	border-color: black;
 	background: transparent;
 }
-.container .dropdown .dropdown-menu a:hover {
+.dropdown .dropdown-menu a:hover {
 	background: rgba(255, 255, 255, 0.1);
+}
+
+@media only screen and (max-width: 800px) {
+	.navbar {
+		padding: 20px 10px !important;
+	}
+	.navbar-collapse {
+		text-align: center;
+	}
+	.dropdown .dropdown-menu {
+		background: rgba(255, 255, 255, 0.5);
+		text-align: center;
+		border-color: white;
+	}
+	.footer {
+		font-size: small;
+	}
+}
+
+// Menu
+.item {
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+.item h4,
+.item p {
+	display: block;
+	clear: both;
+}
+.item p {
+	clear: both;
+	color: $filter-gray;
+	margin-left: 5px;
+	font-size: 12px;
+}
+.item span:first-of-type {
+	background-image: linear-gradient(to right, rgba(56, 47, 47, 0.5) 33%, rgba(0, 0, 0, 0) 0%);
+	background-position: bottom;
+	background-size: 3px 1px;
+	background-repeat: repeat-x;
+	height: 1px;
+	width: 100%;
+	position: absolute;
+	top: 22px;
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	.dots {
+		background: transparent url("/img/dot.gif") repeat-x bottom left;
+	}
+}
+.badge {
+	display: inline-block;
+	padding: 0 10px;
+	background: #d2c82a;
+	font-size: 12px;
+	font-weight: 300;
+	line-height: 26px;
+	color: #fff;
+	text-align: center;
+	vertical-align: middle;
+	text-transform: uppercase;
+	border: 1px solid rgba(0, 0, 0, 0.05);
+	letter-spacing: 1px;
+	border-radius: 3px;
+	margin: -2px 5px 0 0;
+}
+.note {
+	padding: 0 5px 0 7px;
+	min-width: 23px;
+	background: rgba(0, 0, 0, 0);
+	border: 1px solid #382f2f;
+	color: #382f2f;
+	box-sizing: border-box;
+	border-radius: 12px;
+	line-height: 21px;
+}
+.veggie {
+	color: #82b440;
+	border-color: #82b440;
+}
+.spicy {
+	color: #ec4e00;
+	border-color: #ec4e00;
+}
+.item span:nth-of-type(2n) {
+	position: absolute;
+	font-size: 22px;
+	font-weight: 400;
+	right: 0;
+	padding-left: 8px;
+	background-color: #fff;
+	z-index: 0;
+}
+.item h4 {
+	display: inline-block;
+	padding-right: 8px;
+	font-size: 1.25rem;
+	max-width: 80%;
+	text-transform: capitalize;
+	margin-bottom: 4px;
+	position: relative;
+}
+#price:before {
+	content: "€";
+}
+#description {
+	text-transform: capitalize;
+}
+
+// Footer
+.fa {
+	padding: 20px;
+	width: 50px;
+	text-align: center;
+	text-decoration: none;
+	margin: 5px 2px;
+	border-radius: 50%;
+	color: $gray-900;
+}
+
+.fa:hover {
+	color: $filter-gray;
+}
+
+.link-dark {
+	color: $gray-900;
 }

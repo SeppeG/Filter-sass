@@ -4,3 +4,6 @@ $(function () {
 		$nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
 	});
 });
+var scrollSpy = new bootstrap.ScrollSpy(document.body, {
+	target: "#navbar",
+});

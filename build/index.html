@@ -4,10 +4,13 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- Stylesheets -->
 		<link href="../css/custom.css" rel="stylesheet" />
+
 		<title>Koffiebar Filter</title>
 
-		<!-- favicon -->
+		<!-- Favicon -->
 		<link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png" />
 		<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png" />
 		<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png" />
@@ -15,83 +18,171 @@
 		<meta name="msapplication-TileColor" content="#da532c" />
 		<meta name="theme-color" content="#ffffff" />
 	</head>
-	<body>
+	<body data-bs-spy="scroll" data-bs-target="#navbar">
 		<div class="bg-img">
-			<div class="container fixed-top">
-				<nav class="navbar navbar-expand-lg navbar-light" id="navigation">
-					<div class="container-fluid">
-						<a class="navbar-brand animate__animated animate__fadeIn" href="#"><img src="/img/logo-koffie-en-lunchbar-02.webp" alt="" width="300" /></a>
-						<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-							<span class="navbar-toggler-icon"></span>
-						</button>
-						<div class="collapse navbar-collapse" id="navbarSupportedContent">
-							<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-								<li class="nav-item dropdown">
-									<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Menu </a>
-									<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-										<li><a class="dropdown-item" href="#">Weekmenu</a></li>
-										<li><a class="dropdown-item" href="#">Brunch</a></li>
-									</ul>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#">Openingsuren</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#">Contact</a>
-								</li>
-							</ul>
+			<nav class="navbar sticky-top navbar-expand-lg navbar-light" id="navbar">
+				<div class="container-fluid">
+					<a class="navbar-brand animate__animated animate__fadeIn" href="#"><img src="/img/logo-koffie-en-lunchbar-02.webp" alt="" height="150" id="navbar-logo" /></a>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Menu </a>
+								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<li><a class="dropdown-item" href="#weekmenu">Weekmenu</a></li>
+									<li><a class="dropdown-item" href="#brunch">Brunch</a></li>
+								</ul>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Openingsuren</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Contact</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+		<div class="container">
+			<br /><br />
+			<div class="container" data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0" tabindex="0">
+				<div class="row">
+					<h1 class="text-center">Menu</h1>
+					<div class="text-center">
+						<a id="1"></a>
+						<h3 id="weekmenu">Weekmenu</h3>
+					</div>
+					<div class="row">
+						<div class="col-sm-6 col-md-4">
+							<div class="item">
+								<h4>Wrap kip</h4>
+								<span></span>
+								<span id="price">5,30</span>
+								<p id="description">avocado, zure room, cocktailsaus, kip, rucola, tomaat</p>
+							</div>
+						</div>
+						<div class="col-sm-6 col-md-4">
+							<div class="item">
+								<h4>Boterham hummus</h4>
+								<span></span>
+								<span id="price">5,60</span>
+								<p id="description">Gegrilde groenten, feta, rucola, zongedroogde tomaten</p>
+							</div>
+						</div>
+						<div class="col-sm-6 col-md-4">
+							<div class="item">
+								<h4>Smos kaas</h4>
+								<span></span>
+								<span id="price">4,50</span>
+								<p id="description"></p>
+							</div>
+						</div>
+						<div class="col-sm-6 col-md-4">
+							<div class="item">
+								<h4>Luikse Salade</h4>
+								<span></span>
+								<span id="price">8,80</span>
+								<p id="description">spek, sperzieboontjes, aardappel, ei, rode ui</p>
+							</div>
+						</div>
+						<div class="col-sm-6 col-md-4">
+							<div class="item">
+								<h4>Caeser salad</h4>
+								<div class="note badge veggie" data-toggle="tooltip" data-placement="right" title="Vegetarian"><i class="fas fa-leaf"></i></div>
+								<span></span>
+								<span id="price">8,00</span>
+								<p id="description">Sperziebonen, kappertjes, croutons</p>
+							</div>
 						</div>
 					</div>
-				</nav>
+					<div class="text-center">
+						<a id="2"></a>
+						<h3 id="brunch">Brunch op zondag</h3>
+						<h5>€21,00 P.P.</h5>
+						<p>Afhaal in de koffiebar (8u30 - 11u) of levering aan huis (tot 8 km rond Mol. +8km = meerprijs)</p>
+
+						<br />
+					</div>
+					<div class="row text-center">
+						<div class="col-sm-6 col-md-4">
+							<h4>2 pistolets</h4>
+						</div>
+						<div class="col-sm-6 col-md-4">
+							<h4>1 croissant</h4>
+						</div>
+						<div class="col-sm-6 col-md-4">
+							<h4>yoghurt</h4>
+						</div>
+						<div class="col-sm-6 col-md-4">
+							<h4>homemade granola</h4>
+						</div>
+						<div class="col-sm-6 col-md-4">
+							<h4>vers fruit</h4>
+						</div>
+						<div class="col-sm-6 col-md-4">
+							<h4>american pancakes</h4>
+						</div>
+						<div class="col-sm-6 col-md-4">
+							<h4>brie</h4>
+						</div>
+						<div class="col-sm-6 col-md-4">
+							<h4>parmaham</h4>
+						</div>
+						<div class="col-sm-6 col-md-4">
+							<h4>homemade eiersalade</h4>
+						</div>
+						<div class="col-sm-6 col-md-4">
+							<h4>gerookte zalm</h4>
+						</div>
+						<div class="col-sm-6 col-md-4">
+							<h4>homemade confituur</h4>
+						</div>
+						<div class="col-sm-6 col-md-4">
+							<h4>verse tomatensoep</h4>
+						</div>
+						<div class="col-sm-6 col-md-4">
+							<h4>klein gebakje</h4>
+						</div>
+						<div class="col-sm-6 col-md-4">
+							<h4>fruisapje</h4>
+						</div>
+					</div>
+					<div class="text-center">
+						<br />
+						<p>Filter-brunch voor de kleintjes bieden we ook aan! <span class="text-muted">#vraagernaar</span></p>
+					</div>
+				</div>
+			</div>
+			<div class="container d-flex align-items-end" style="height: 200px">
+				<div class="container">
+					<div class="row d-flex align-items-center">
+						<div class="col d-flex justify-content-center">
+							<nav class="nav flex-column" id="footer-nav">
+								<a href="#" class="link-dark">Home</a>
+								<a href="#" class="link-dark">Menu</a>
+								<a href="#" class="link-dark">Openingsuren</a>
+								<a href="#" class="link-dark">Contact</a>
+							</nav>
+						</div>
+						<div class="col d-flex justify-content-center">
+							<img src="img/logo-text.webp" class="img-fluid mx-auto d-block" alt="..." width="150px" />
+						</div>
+						<div class="col d-flex justify-content-center">
+							<a href="https://www.facebook.com/koffiebarfilter" target="_blank"><i class="fa fa-facebook fa-2x"></i></a>
+							<a href="https://www.instagram.com/koffiebarfilter" target="_blank"><i class="fa fa-instagram fa-2x"></i></a>
+							<a href="tel:014 73 51 25" target="_blank"><i class="fa fa-phone fa-2x"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="d-flex justify-content-center">
+				<p><br /><br />&copy; Filter koffie- en lunchbar | Webdesign: <a href="#" class="link-dark">Seppe Geuens</a></p>
 			</div>
 		</div>
-		<br /><br />
-		<div class="container">
-			<div class="accordion" id="accordionExample">
-				<div class="accordion-item">
-					<h2 class="accordion-header" id="headingOne">
-						<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Accordion Item #1</button>
-					</h2>
-					<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-						<div class="accordion-body"><strong>This is the first item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.</div>
-					</div>
-				</div>
-				<div class="accordion-item">
-					<h2 class="accordion-header" id="headingTwo">
-						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Accordion Item #2</button>
-					</h2>
-					<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-						<div class="accordion-body"><strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.</div>
-					</div>
-				</div>
-				<div class="accordion-item">
-					<h2 class="accordion-header" id="headingThree">
-						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Accordion Item #3</button>
-					</h2>
-					<div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-						<div class="accordion-body"><strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="container" style="height: 300px">
-			<div class="align-items-center">
-				<div class="row align-items-center">
-					<div class="col d-flex justify-content-center">
-						<nav class="nav flex-column">
-							<a href="#">Home</a>
-							<a href="#">Menu</a>
-							<a href="#">Openingsuren</a>
-							<a href="#">Contact</a>
-						</nav>
-					</div>
-					<div class="col d-flex justify-content-center">
-						<img src="img/logo-text.webp" class="img-fluid mx-auto d-block" alt="..." width="150px" />
-					</div>
-					<div class="col d-flex justify-content-center">qsdfqsdf</div>
-				</div>
-			</div>
-		</div>
+
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 		<script src="/js/script.js"></script>

@@ -12,59 +12,63 @@ const destination = "build";
 sass.compiler = require("node-sass");
 
 async function clean(cb) {
-  await del(destination);
-  cb();
+	await del(destination);
+	cb();
 }
 
 function html(cb) {
-  src(`${origin}/**/*.html`).pipe(dest(destination));
-  cb();
+	src(`${origin}/**/*.html`).pipe(dest(destination));
+	cb();
 }
 
 async function images(cb) {
-  src(`${origin}/img/*`)
-    .pipe(webp())
-    .pipe(dest(`${destination}/img`));
-  src(`${origin}/img/favicon/*`).pipe(dest(`${destination}/img/favicon`));
-  cb();
+	src(`${origin}/img/*`)
+		.pipe(webp())
+		.pipe(dest(`${destination}/img`));
+	src(`${origin}/img/favicon/*`).pipe(dest(`${destination}/img/favicon`));
+	cb();
 }
 
 function scss(cb) {
-  src(`${origin}/scss/**/*.scss`)
-    .pipe(sass({ outputStyle: "compressed" }))
-    .pipe(dest(`${destination}/css`));
-  cb();
+	src(`${origin}/scss/**/*.scss`)
+		.pipe(sass({ outputStyle: "compressed" }))
+		.pipe(dest(`${destination}/css`));
+	cb();
+}
+function webfonts(cb) {
+	src(`${origin}/webfonts/**/**`).pipe(dest(`${destination}/webfonts`));
+	cb();
 }
 
 function js(cb) {
-  src(`${origin}/js/lib/**/*.js`).pipe(dest(`${destination}/js/lib`));
-  src(`${origin}/js/script.js`)
-    .pipe(
-      babel({
-        presets: ["@babel/env"],
-      })
-    )
-    .pipe(dest(`${destination}/js`));
-  cb();
+	src(`${origin}/js/lib/**/*.js`).pipe(dest(`${destination}/js/lib`));
+	src(`${origin}/js/script.js`)
+		.pipe(
+			babel({
+				presets: ["@babel/env"],
+			})
+		)
+		.pipe(dest(`${destination}/js`));
+	cb();
 }
 
 function watcher(cb) {
-  watch(`${origin}/**/*.html`).on("change", series(html, browserSync.reload));
-  watch(`${origin}/**/*.scss`).on("change", series(scss, browserSync.reload));
-  watch(`${origin}/**/*.js`).on("change", series(js, browserSync.reload));
-  cb();
+	watch(`${origin}/**/*.html`).on("change", series(html, browserSync.reload));
+	watch(`${origin}/**/*.scss`).on("change", series(scss, browserSync.reload));
+	watch(`${origin}/**/*.js`).on("change", series(js, browserSync.reload));
+	cb();
 }
 
 function server(cb) {
-  browserSync.init({
-    notify: false,
-    open: false,
-    server: { baseDir: destination },
-  });
-  cb();
+	browserSync.init({
+		notify: false,
+		open: false,
+		server: { baseDir: destination },
+	});
+	cb();
 }
 
 exports.html = html;
 exports.scss = scss;
 exports.js = js;
-exports.default = series(clean, parallel(html, scss, js), images, server, watcher);
+exports.default = series(clean, parallel(html, scss, js, webfonts), images, server, watcher);
