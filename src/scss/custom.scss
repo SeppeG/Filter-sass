@@ -254,6 +254,23 @@ h4 {
 	font-size: 20px;
 }
 
+// Contact
+#contact-info .lg {
+	text-align: center;
+}
+#googleMap {
+	margin-top: 2rem;
+}
+.contact .fas {
+	margin-right: 1rem;
+}
+
+.contact a {
+	font-size: 1.25rem;
+	text-decoration: none;
+	color: $gray-900;
+}
+
 // Footer
 .fa {
 	padding: 20px;
