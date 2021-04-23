@@ -49,7 +49,7 @@
 		<div class="container">
 			<div class="container" data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0" tabindex="0">
 				<div class="row">
-					<h1 class="text-center">Menu</h1>
+					<h1 class="text-center" id="menu">Menu</h1>
 					<div class="text-center">
 						<a id="1"></a>
 						<h3 id="weekmenu">Weekmenu</h3>
@@ -57,7 +57,7 @@
 					<div class="row">
 						<div class="col-sm-6 col-md-4">
 							<div class="item">
-								<h4>Wrap kip</h4>
+								<h4 class="badge-spicy" title="Spicy">Wrap kip</h4>
 								<span></span>
 								<span id="price">5,30</span>
 								<p id="description">avocado, zure room, cocktailsaus, kip, rucola, tomaat</p>
@@ -76,7 +76,7 @@
 								<h4>Smos kaas</h4>
 								<span></span>
 								<span id="price">4,50</span>
-								<p id="description"></p>
+								<p id="description">Half stokbrood, kaas, groentjes, mayonaise</p>
 							</div>
 						</div>
 						<div class="col-sm-6 col-md-4">
@@ -89,11 +89,18 @@
 						</div>
 						<div class="col-sm-6 col-md-4">
 							<div class="item">
-								<h4>Caeser salad</h4>
-								<div class="note badge veggie" data-toggle="tooltip" data-placement="right" title="Vegetarian"><i class="fas fa-leaf"></i></div>
+								<h4 class="badge-veggie" title="Veggie">Caeser salad</h4>
 								<span></span>
 								<span id="price">8,00</span>
 								<p id="description">Sperziebonen, kappertjes, croutons</p>
+							</div>
+						</div>
+						<div class="col-sm-6 col-md-4">
+							<div class="item">
+								<h4 class="badge-veggie" title="Veggie">Salade Carpaccio</h4>
+								<span></span>
+								<span id="price">9,20</span>
+								<p id="description">Carpaccio, zongedroogde tomaten, parmezaanse kaas, pijnboompitten, mozzarella</p>
 							</div>
 						</div>
 					</div>
@@ -186,9 +193,9 @@
 						<div class="col d-flex justify-content-center">
 							<nav class="nav flex-column" id="footer-nav">
 								<a href="#" class="link-dark">Home</a>
-								<a href="#" class="link-dark">Menu</a>
-								<a href="#" class="link-dark">Openingsuren</a>
-								<a href="#" class="link-dark">Contact</a>
+								<a href="#menu" class="link-dark">Menu</a>
+								<a href="#openingsuren" class="link-dark">Openingsuren</a>
+								<a href="#contact" class="link-dark">Contact</a>
 							</nav>
 						</div>
 						<div class="col d-flex justify-content-center">
@@ -203,7 +210,7 @@
 				</div>
 			</div>
 			<div class="d-flex justify-content-center">
-				<p><br /><br />&copy; Filter koffie- en lunchbar | Webdesign: <a href="#" class="link-dark">Seppe Geuens</a></p>
+				<p><br /><br />&copy; Filter koffie- en lunchbar | Webdesign: <a href="https://seppe.geuens.nxtmediatech.eu/" target="_blank" class="link-dark">Seppe Geuens</a></p>
 			</div>
 		</div>
 

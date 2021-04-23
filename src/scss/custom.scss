@@ -58,8 +58,6 @@ h3 {
 }
 h3:before {
 	left: -40px;
-	height: 0;
-	height: 1px;
 }
 h3:before,
 h3:after {
@@ -69,7 +67,7 @@ h3:after {
 	height: 1px;
 	width: 40px;
 	margin: 0 -15px;
-	background-color: #533834;
+	background-color: $gray-900;
 }
 h3:after {
 	right: -40px;
@@ -179,39 +177,21 @@ h4 {
 		background: transparent url("/img/dot.gif") repeat-x bottom left;
 	}
 }
-.badge {
-	display: inline-block;
-	padding: 0 10px;
-	background: #d2c82a;
+.badge-veggie::after {
+	padding: 0 7px 0 7px;
+	font-family: "Font Awesome 5 Free";
 	font-size: 12px;
-	font-weight: 300;
-	line-height: 26px;
-	color: #fff;
-	text-align: center;
-	vertical-align: middle;
-	text-transform: uppercase;
-	border: 1px solid rgba(0, 0, 0, 0.05);
-	letter-spacing: 1px;
-	border-radius: 3px;
-	margin: -2px 5px 0 0;
-}
-.note {
-	padding: 0 5px 0 7px;
-	min-width: 23px;
-	background: rgba(0, 0, 0, 0);
-	border: 1px solid #382f2f;
-	color: #382f2f;
-	box-sizing: border-box;
-	border-radius: 12px;
-	line-height: 21px;
-}
-.veggie {
+	content: "\f06c";
 	color: #82b440;
-	border-color: #82b440;
+	vertical-align: middle;
 }
-.spicy {
+.badge-spicy::after {
+	padding: 0 7px 0 7px;
+	font-family: "Font Awesome 5 Free";
+	font-size: 12px;
+	content: "\f816";
 	color: #ec4e00;
-	border-color: #ec4e00;
+	vertical-align: middle;
 }
 .item span:nth-of-type(2n) {
 	position: absolute;
